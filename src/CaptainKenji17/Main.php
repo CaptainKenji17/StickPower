@@ -21,7 +21,7 @@ $this->getServer()->getPluginManager()->registerEvents($this,$this);
 public function onHurt(EntityDamageEvent $event){
 if($event instanceof EntityDamageByEntityEvent){
 if($event->getDamager()->getInventory()->getItemInHand()->getId() === 280){
-				$event->getEntity()->getKnockBack($this->getConfig()->get("KnockBack-Power"));
+				$event->getEntity()->setKnockBack($this->getConfig()->get("KnockBack-Power"));
     }
    }
   }
