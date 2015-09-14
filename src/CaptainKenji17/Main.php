@@ -1,5 +1,5 @@
 <?php
-namespace StickPower;
+namespace CaptainKenji17;
 use pocketmine\Player;
 use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
