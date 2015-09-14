@@ -1,13 +1,10 @@
 <?php
 namespace CaptainKenji17;
-use pocketmine\Player;
-use pocketmine\Server;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\utils\TextFormat;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
-use pocketmine\event\entity;
 class Main extends PluginBase implements Listener{
 public function onEnable()
 {
