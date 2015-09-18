@@ -2,6 +2,7 @@
 
 namespace CaptainKenji17;
 
+use pocketmine\event\player\PlayerItemHeldEvent;
 use pocketmine\Player;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageEvent;
@@ -23,9 +24,14 @@ class Main extends PluginBase implements Listener{
 				if($damager->getInventory()->getItemInHand()->getId() === 280){
 					$event->setKnockBack($this->getConfig()->get("KnockBack-Power"));
                               $level = $damager->getLevel();
-                              $level->addSound(new AnvilFallSound($player->getLocation()));     
+                              $level->addSound(new AnvilFallSound($damager->getLocation()));     
 				}
 			}
 		}
 	}
+public function onItemHeld(PlayerItemHeldEvent $ev){
+if($ev->getPlayer()->getInventory()->getItemInHand() === 280){
+$ev->getPlayer()->sendTip("§bStickPower Enabled!");
+}
+}
 }
