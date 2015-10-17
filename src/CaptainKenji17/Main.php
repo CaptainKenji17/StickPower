@@ -33,7 +33,7 @@ class Main extends PluginBase implements Listener{
 		}
 	}
 public function onItemHeld(PlayerItemHeldEvent $ev){
-if($ev->getPlayer()->getInventory()->getItemInHand()getId() === 280){
+if($ev->getPlayer()->getInventory()->getItemInHand()->getId() === 280){
 $ev->getPlayer()->sendTip("§bStick§cPower §aEnabled!");
 }
 }
