@@ -11,6 +11,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\TextFormat;
 use pocketmine\level\sound\AnvilFallSound;
 use pocketmine\Server;
+use pocketmine\entity\Effect;
 
 class Main extends PluginBase implements Listener{
 	public function onEnable(){
@@ -26,13 +27,13 @@ class Main extends PluginBase implements Listener{
 					$event->setKnockBack($this->getConfig()->get("KnockBack-Power"));
 					$event->addEffect(Effect::getEffect(20)->setAmplifier(1)->setDuration(50)->setVisible(true));
                               $level = $damager->getLevel();
-                              $level->addSound(new AnvilFallSound($level->getLocation()));     
+                              $damager->$getLevel->addSound(new AnvilFallSound($damager->getLocation()));     
 				}
 			}
 		}
 	}
 public function onItemHeld(PlayerItemHeldEvent $ev){
-if($ev->getPlayer()->getInventory()->getItemInHand() === 280){
+if($ev->getPlayer()->getInventory()->getItemInHand()getId() === 280){
 $ev->getPlayer()->sendTip("§bStick§cPower §aEnabled!");
 }
 }
