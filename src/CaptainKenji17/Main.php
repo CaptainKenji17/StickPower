@@ -27,7 +27,7 @@ class Main extends PluginBase implements Listener{
 					$event->setKnockBack($this->getConfig()->get("KnockBack-Power"));
 					$event->addEffect(Effect::getEffect(20)->setAmplifier(1)->setDuration(50)->setVisible(true));
                               $level = $damager->getLevel();
-                              $damager->$getLevel->addSound(new AnvilFallSound($damager->getLocation()));     
+                              $Level->addSound(new AnvilFallSound($damager->getLocation()));     
 				}
 			}
 		}
