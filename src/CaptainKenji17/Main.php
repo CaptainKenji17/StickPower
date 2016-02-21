@@ -22,10 +22,11 @@ class Main extends PluginBase implements Listener{
 	public function onHurt(EntityDamageEvent $event){
 		if($event instanceof EntityDamageByEntityEvent){
 			$damager = $event->getDamager();
+			$player = $event->getEntity();
 			if($damager instanceof Player){
 				if($damager->getInventory()->getItemInHand()->getId() === 280){
 					$event->setKnockBack($this->getConfig()->get("KnockBack-Power"));
-					$event->addEffect(Effect::getEffect(20)->setAmplifier(1)->setDuration(50)->setVisible(true));
+					$player->addEffect(Effect::getEffect(20)->setAmplifier(1)->setDuration(50)->setVisible(true));
                               $level = $damager->getLevel();
                               $Level->addSound(new AnvilFallSound($damager->getLocation()));     
 				}
